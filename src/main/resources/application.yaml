@@ -4,3 +4,6 @@ spring:
     name: tacocloud
   thymeleaf:
     cache: false
+    spring:
+      h2:
+        console.enabled: true
