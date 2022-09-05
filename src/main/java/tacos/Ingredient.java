@@ -1,16 +1,16 @@
 package tacos;
 
 import lombok.*;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
-
-@Table("ingredients")
+@Document(collation = "ingredients")
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 public class Ingredient {
-@PrimaryKey
+@Id
     private String id;
     private String name;
     private Type type;
