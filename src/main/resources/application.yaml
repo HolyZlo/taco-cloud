@@ -2,8 +2,16 @@ spring:
   datasource:
     generate-unique-name: false
     name: tacocloud
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
   thymeleaf:
     cache: false
     spring:
       h2:
         console.enabled: true
+logging:
+  level:
+    sql: debug
+    web: debug
+    tacos: debug
