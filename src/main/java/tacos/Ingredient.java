@@ -1,16 +1,16 @@
 package tacos;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 import lombok.*;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 @Data
-@Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
-@NoArgsConstructor(access=AccessLevel.PUBLIC, force=true)
+
+@Table("ingredients")
 public class Ingredient {
-    @Id
+@PrimaryKey
     private String id;
     private String name;
     private Type type;

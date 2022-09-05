@@ -18,6 +18,7 @@ import tacos.Ingredient;
 import tacos.Ingredient.Type;
 import tacos.Taco;
 import tacos.TacoOrder;
+import tacos.TacosURDUtils;
 import tacos.data.IngredientRepository;
 
 import javax.validation.Valid;
@@ -43,6 +44,7 @@ public class DesignTacoController {
                     filterByType(ingredients, type));
         }
     }
+
     @ModelAttribute(name = "tacoOrder")
     public TacoOrder order() {
         return new TacoOrder();
@@ -64,14 +66,14 @@ public class DesignTacoController {
         if (errors.hasErrors()) {
             return "design";
         }
-        tacoOrder.addTaco(taco);
+        tacoOrder.addTaco(TacosURDUtils.toTacoUDT(taco));
         log.info("Processing taco: {}", taco);
         return "redirect:/orders/current";
     }
 
     private Iterable<Ingredient> filterByType(
             Iterable<Ingredient> ingredients, Type type) {
-        return StreamSupport.stream(ingredients.spliterator(),false)
+        return StreamSupport.stream(ingredients.spliterator(), false)
                 .filter(x -> x.getType().equals(type))
                 .collect(Collectors.toList());
     }
