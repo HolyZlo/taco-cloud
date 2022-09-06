@@ -1,7 +1,6 @@
 package tacos;
 
 import lombok.Data;
-import lombok.Generated;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
 import javax.persistence.*;
@@ -42,7 +41,8 @@ public class TacoOrder implements Serializable {
     private String ccCVV;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
-
+    @ManyToOne
+    private User user;
     public void addTaco(Taco taco) {
         this.tacos.add(taco);
     }
