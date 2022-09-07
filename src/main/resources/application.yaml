@@ -15,3 +15,7 @@ logging:
     sql: debug
     web: debug
     tacos: debug
+taco:
+  orders:
+    pageSize: 10
+
