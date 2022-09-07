@@ -20,7 +20,7 @@ public class Taco {
     private String name;
     private Date createdAt = new Date();
     @Size(min=1, message="You must choose at least 1 ingredient")
-    @ManyToMany()
+    @ManyToMany
     private List<Ingredient> ingredients = new ArrayList<>();
     public void addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);

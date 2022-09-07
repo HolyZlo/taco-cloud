@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import tacos.data.IngredientRepository;
 import tacos.Ingredient.Type;
@@ -52,6 +53,8 @@ public class TacoCloudApplication {
             repo.save(jack);
             repo.save(salsa);
             repo.save(sourCream);
+            repo.save(new Ingredient(
+                    "TEST", "Test Cream", Type.SAUCE));
             Taco taco1 = new Taco();
             taco1.setName("Carnivore");
             taco1.setIngredients(Arrays.asList(
@@ -70,9 +73,9 @@ public class TacoCloudApplication {
                     flourTortilla, cornTortilla, tomatoes,
                     lettuce, salsa));
             tacoRepo.save(taco3);
-
-
-            userRepo.save(new User("root", passwordEncoder.encode("123"), "Ivan", "1Street", "1City", "1State", "1Zip", "1234567"));
+            User rootUser = new User("root", passwordEncoder.encode("123"), "Ivan",
+                    "1Street", "1City", "1State", "1Zip", "1234567");
+            userRepo.save(rootUser);
         };
     }
 

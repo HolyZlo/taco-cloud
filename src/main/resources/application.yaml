@@ -4,7 +4,7 @@ spring:
     name: tacocloud
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: create
   thymeleaf:
     cache: false
     spring:
@@ -13,6 +13,8 @@ spring:
   data:
     rest:
       base-path: /data-api
+  security:
+    enable-csrf: false
 logging:
   level:
     sql: debug
