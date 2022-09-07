@@ -1,8 +1,4 @@
----
 spring:
-  config:
-    activate:
-      on-profile: dev
   datasource:
     generate-unique-name: false
     name: tacocloud
@@ -14,6 +10,9 @@ spring:
     spring:
       h2:
         console.enabled: true
+  data:
+    rest:
+      base-path: /data-api
 logging:
   level:
     sql: debug
@@ -22,19 +21,3 @@ logging:
 taco:
   orders:
     pageSize: 10
----
-spring:
-  config:
-    activate:
-      on-profile: prod
-  jpa:
-    hibernate:
-      ddl-auto: update
-  datasource:
-    generate-unique-name: false
-    name: tacoprod
-logging:
-  level:
-    sql: WARN
-    web: WARN
-    tacos: WARN
