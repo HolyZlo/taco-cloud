@@ -1,4 +1,4 @@
-package tacos.web.api;
+package tacos.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import tacos.Ingredient;
-import tacos.data.IngredientRepository;
+import tacos.repository.IngredientRepository;
 
 @RestController
 @RequestMapping(path = "/api/ingredients", produces = "application/json")

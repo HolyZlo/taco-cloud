@@ -1,7 +1,5 @@
 package tacos.web;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -18,7 +16,7 @@ import tacos.Ingredient;
 import tacos.Ingredient.Type;
 import tacos.Taco;
 import tacos.TacoOrder;
-import tacos.data.IngredientRepository;
+import tacos.repository.IngredientRepository;
 
 import javax.validation.Valid;
 

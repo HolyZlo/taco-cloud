@@ -1,10 +1,8 @@
 package tacos.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import tacos.data.OrderRepository;
+import tacos.repository.OrderRepository;
 
 @Service
 public class OrderAdminService {

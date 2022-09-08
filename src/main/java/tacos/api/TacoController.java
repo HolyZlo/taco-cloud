@@ -1,14 +1,4 @@
-package tacos.web.api;
-
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import tacos.Taco;
-import tacos.data.TacoRepository;
-
-import java.util.Optional;
+package tacos.api;
 
 //@RestController
 //@RequestMapping(path = "/api/tacos",
