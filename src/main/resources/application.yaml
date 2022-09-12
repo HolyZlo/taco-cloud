@@ -15,6 +15,10 @@ spring:
       base-path: /data-api
   security:
     enable-csrf: false
+  rabbitmq:
+    template:
+     exchange: tacocloud.order
+     routing-key: kitchens.central
 logging:
   level:
     sql: debug
